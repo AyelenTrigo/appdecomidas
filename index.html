@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Qué comemos hoy?</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="contenedor">
+      <div>
+        <p id="paginaInicio">¿Qué comemos hoy?</p></div>
+      <div>
+        <p>?</p></div>
+    </header>
+    
+    <section class="contenedor" id="inicio">
+      <div class="main">
+        <h1 class="titulo">¿Qué comemos hoy?</h1>
+        <button class="boton" id="random" type="submit">
+          Tirame una opción random
+        </button>
+        <button class="boton" id="heladera" type="submit">
+          Ver en mi heladera
+        </button>
+      </div>
+    </section>
+
+    <section class="contenedor" id="paginaComidas">
+      <!-- <div><ul id="listado"></ul></div> -->
+      <div>
+        <!-- <h6>Una opción de plato es</h6> -->
+        <h3 id="plato">Algo rico</h3>
+        <p>Opcionales</p>
+        <ul id="opcionales"></ul>
+        <p>Ingredientes opcionales</p>
+        <ul id="ingredientes"></ul>
+        <button 
+        id="otroPlato" type="submit" class="boton">otra opción</button>
+        <button class="boton" id="heladera2" type="submit">
+          Ver en mi heladera
+        </button>
+      </div>
+    </section>
+    <section id="paginaHeladera">
+      <div class="main">
+        <h4 class="titulo">¿Qué tengo en mi heladera?</h4>
+        <label><input type="text" placeholder="Producto1" id="producto1"/></label>
+
+        <label><input type="text" placeholder="Producto2" id="producto2"/></label>
+
+        <button type="submit" class="boton">Ver comidas</button>
+        <div class="checkbox">
+            <span><input type="checkbox">Vegano</span>
+            <span><input type="checkbox">Vegetariano</span>
+            <span><input type="checkbox">Celíaco</span>
+        </div>
+        
+      </div>
+    </section>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/comidas.js"></script>
+  </body>
+</html>

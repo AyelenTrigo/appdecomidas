@@ -1,0 +1,108 @@
+:root{
+    --color-cafe:#6a550f;
+    --color-dorado:gold;
+    --color-fondo:#f5c65e;
+    --color-beige:#beae6b;
+    --sombra-relieve:-3px 3px 0.5px 0.5px rgb(221, 155, 111, 0.5);
+}
+*{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+.contenedor{
+    max-width: 425px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(/images/patron_comida.JPeG);
+    background-size: 500px;
+    background-position: fixed;
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+header{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    background: var(--color-cafe);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
+header p{
+    padding: 0 10px;
+    color: var(--color-beige);
+}
+.titulo p{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin: 0 auto;
+    height: 250px;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    box-sizing: border-box;
+    cursor: default;
+    
+}
+.boton{
+    padding: 10px;
+    margin: 6px;
+    background-color: var(--color-dorado);
+    color: var(--color-cafe);
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--sombra-relieve);
+    cursor: pointer;
+}
+h1{
+    color: var(--color-cafe);
+    font-size: 26px;
+    background: var(--color-fondo);
+    border-radius: 5px;
+    padding: 2px;
+    box-shadow: var(--sombra-relieve);
+}
+
+.checkbox{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+#paginaComidas{
+    display: none;
+}
+#paginaComidas div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#paginaHeladera{
+    display: none;
+}
+#plato{
+    box-sizing: border-box;
+    text-align: center;
+    white-space: initial;
+}
+ul li{
+    padding: 0;
+    list-style: none;
+}
+ul{
+    padding: 0;
+    text-align: left;
+}
