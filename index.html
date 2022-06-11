@@ -10,11 +10,13 @@
   <body>
     <header class="contenedor">
       <div>
-        <p id="paginaInicio">¿Qué comemos hoy?</p></div>
+        <p id="paginaInicio">¿Qué comemos hoy?</p>
+      </div>
       <div>
-        <p>?</p></div>
+        <p>?</p>
+      </div>
     </header>
-    
+
     <section class="contenedor" id="inicio">
       <div class="main">
         <h1 class="titulo">¿Qué comemos hoy?</h1>
@@ -28,35 +30,44 @@
     </section>
 
     <section class="contenedor" id="paginaComidas">
-      <!-- <div><ul id="listado"></ul></div> -->
-      <div>
-        <!-- <h6>Una opción de plato es</h6> -->
+      <div id="paginaRecetas">
         <h3 id="plato">Algo rico</h3>
-        <p>Opcionales</p>
-        <ul id="opcionales"></ul>
-        <p>Ingredientes opcionales</p>
-        <ul id="ingredientes"></ul>
-        <button 
-        id="otroPlato" type="submit" class="boton">otra opción</button>
-        <button class="boton" id="heladera2" type="submit">
-          Ver en mi heladera
+        <div class="listadosIngredientes">
+          <div class="listadoPrincipal">
+            <p>Ingredientes opcionales para el plato principal</p>
+            <ul id="opcionales"></ul>
+          </div>
+          <div class="listadoAcompañamiento">
+            <p>Ingredientes para el acompañamiento</p>
+            <ul id="ingredientes"></ul>
+          </div>
+        </div>
+      </div>
+        <div class="botones">
+        <button id="otroRandom" type="submit" class="boton">otra opción random</button>
+        <button id="otroPlato" type="submit" class="boton">otra opción</button>
+        <button class="boton" id="volver" type="submit">
+          Volver
         </button>
       </div>
     </section>
     <section id="paginaHeladera">
       <div class="main">
         <h4 class="titulo">¿Qué tengo en mi heladera?</h4>
-        <label><input type="text" placeholder="Producto1" id="producto1"/></label>
+        <label
+          ><input type="text" placeholder="Producto1" id="producto1"
+        /></label>
 
-        <label><input type="text" placeholder="Producto2" id="producto2"/></label>
-
-        <button type="submit" class="boton">Ver comidas</button>
+        <label
+          ><input type="text" placeholder="Producto2" id="producto2"
+        /></label>
+        <p id="validacion">Escribí al menos un producto</p>
+        <button type="submit" id="verComidas" class="boton">Ver comidas</button>
         <div class="checkbox">
-            <span><input type="checkbox">Vegano</span>
-            <span><input type="checkbox">Vegetariano</span>
-            <span><input type="checkbox">Celíaco</span>
+          <span><input type="checkbox" />Vegano</span>
+          <span><input type="checkbox" />Vegetariano</span>
+          <span><input type="checkbox" />Celíaco</span>
         </div>
-        <span>llll</span>
       </div>
     </section>
 

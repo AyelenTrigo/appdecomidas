@@ -67,6 +67,14 @@ header p{
     box-shadow: var(--sombra-relieve);
     cursor: pointer;
 }
+.botones{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
 h1{
     color: var(--color-cafe);
     font-size: 26px;
@@ -76,20 +84,56 @@ h1{
     box-shadow: var(--sombra-relieve);
 }
 
+.listadosIngredientes{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    font-size: 13px;
+    justify-content: space-around;
+    height: 60vh;
+}
+
+.recetas{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    font-size: 13px;
+    justify-content: space-around;
+    height: 60vh;
+}
+.listadoAcompañamiento{
+    text-align: right;
+    padding-right: 20px;
+}
+.listadoAcompañamiento li{
+    text-align: right;
+}
 .checkbox{
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    display: none;
 }
 #paginaComidas{
     display: none;
+    height: 90vh;
+    background: url(/images/fondo_recetas_ok3.png);
+    background-size: 365px;
+    background-position:center;
+    background-position-y: -15px;
+    justify-content: space-around
 }
-#paginaComidas div{
+#paginaRecetas{
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
-    align-items: center;
+    position: relative;
+    width: 240px;
+    margin: 0 auto;
 }
-
+#validacion{
+    display: none;
+}
 #paginaHeladera{
     display: none;
 }
@@ -97,6 +141,8 @@ h1{
     box-sizing: border-box;
     text-align: center;
     white-space: initial;
+    font-size: 16px;
+    margin-top: 50px;
 }
 ul li{
     padding: 0;
