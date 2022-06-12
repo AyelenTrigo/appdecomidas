@@ -3,17 +3,21 @@
     --color-dorado:gold;
     --color-fondo:#f5c65e;
     --color-beige:#beae6b;
+    --color-cafe-oscuro:#3a3010;
+    --color--naranja:#eb730a;
     --sombra-relieve:-3px 3px 0.5px 0.5px rgb(221, 155, 111, 0.5);
 }
 *{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: lighter;
-    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-cafe-oscuro);
 }
 .contenedor{
     max-width: 425px;
     margin: 0 auto;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 body{
     background-image: url(/images/patron_comida.JPeG);
@@ -22,12 +26,38 @@ body{
     margin: 0;
     padding: 0;
     cursor: default;
+    position: relative;
 }
-
+#ayuda{
+    display: block;
+    cursor: pointer;
+    font-weight: bold;
+    height: 10px;
+    padding: 5px 10px 15px;
+    width: 10px;
+    float: right;
+    border-radius: 50%;
+}
+#muestraAyuda{
+    display: none;
+    text-align: center;
+    height: 40vh;
+    width: 100%;
+    position: absolute;
+}
+#muestraAyuda p{
+    
+    border: solid 1px;
+    border-radius: 20px;
+    background-color: var(--color-fondo);
+    width: 220px;
+    padding: 30px;
+    margin: 30px auto;
+}
 header{
     display: flex;
-    width: 100%;
     flex-direction: row;
+    width: 100%;
     justify-content: space-between;
     background: var(--color-cafe);
     margin: 0;
@@ -35,33 +65,53 @@ header{
     box-sizing: border-box;
     cursor: default;
 }
+header div{
+    margin: 0 auto;
+}
 header p{
     padding: 0 10px;
     color: var(--color-beige);
 }
-.titulo p{
+.tituloHeladera{
     text-align: center;
-    margin: 0;
+    margin-top: 20px;
     padding: 0;
+    color: #3a3010;
+    background-color: var(--color-fondo);
 }
 .main{
     display: flex;
     flex-direction: column;
     width: 250px;
-    margin: 0 auto;
     height: 250px;
     justify-content: space-around;
     align-items: center;
     align-content: space-around;
     box-sizing: border-box;
     cursor: default;
-    
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+#paginaHeladera{
+    display: none;
+    position: relative;
+}
+.heladera{
+    display: flex;
+    height: 60vh;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+label{
+    padding: 10px;
 }
 .boton{
     padding: 10px;
     margin: 6px;
     background-color: var(--color-dorado);
-    color: var(--color-cafe);
+    color: var(--color-cafe-oscuro);
     border: none;
     border-radius: 10px;
     box-shadow: var(--sombra-relieve);
@@ -70,27 +120,40 @@ header p{
 .botones{
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 70%;
     justify-content: space-around;
     align-items: flex-end;
-    margin-bottom: 20px;
+    margin: 0 auto;
 }
 h1{
     color: var(--color-cafe);
-    font-size: 26px;
+    font-size: 22px;
     background: var(--color-fondo);
     border-radius: 5px;
     padding: 2px;
     box-shadow: var(--sombra-relieve);
+    margin-top: 10px;
 }
 
 .listadosIngredientes{
     display: flex;
     width: 100%;
-    flex-direction: row;
+    flex-direction: column;
     font-size: 13px;
     justify-content: space-around;
-    height: 60vh;
+    height: 42vh;
+    box-sizing: border-box;
+    padding-left: 15px;
+}
+.listadosIngredientes ul li{
+    padding-left: 5px;
+    list-style: circle;
+}
+.listadosIngredientes p{
+    margin: 5px 0;
+}
+.listadosIngredientes ul{
+    margin:7px 0;
 }
 
 .recetas{
@@ -100,13 +163,6 @@ h1{
     font-size: 13px;
     justify-content: space-around;
     height: 60vh;
-}
-.listadoAcompañamiento{
-    text-align: right;
-    padding-right: 20px;
-}
-.listadoAcompañamiento li{
-    text-align: right;
 }
 .checkbox{
     display: flex;
@@ -133,22 +189,30 @@ h1{
 }
 #validacion{
     display: none;
-}
-#paginaHeladera{
-    display: none;
+    width: 200px;
+    text-align: center;
+    color: #3a3010;
+    font-size: 14px;
+    background-color: var(--color-fondo);
 }
 #plato{
     box-sizing: border-box;
     text-align: center;
     white-space: initial;
     font-size: 16px;
-    margin-top: 50px;
+    margin-top: 45px;
+    margin-bottom: 10px;
+    padding-right: 10px;
 }
-ul li{
-    padding: 0;
-    list-style: none;
+#verRecetaP{
+    overflow: auto;
+    width: 100%;
 }
-ul{
-    padding: 0;
-    text-align: left;
+#ups{
+    display: block;
+    display: none;
+    width: 200px;
+    text-align: center;
+    position: relative;
+    background-color: var(--color-fondo);
 }

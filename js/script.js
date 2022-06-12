@@ -5,12 +5,15 @@ let volver = document.getElementById("volver");
 let otroRandom = document.getElementById("otroRandom");
 let otroPlato = document.getElementById("otroPlato");
 let verComidas = document.getElementById("verComidas");
+let ayuda = document.getElementById("ayuda");
+let cerrarAyuda = document.getElementById("cerrarAyuda");
 
 //PANTALLAS
 let paginaComidas = document.getElementById("paginaComidas");
 let paginaHeladera = document.getElementById("paginaHeladera");
 let inicio = document.getElementById("inicio");
 let paginaInicio = document.getElementById("inicio");
+let muestraAyuda = document.getElementById("muestraAyuda");
 
 //otros
 let titulo = document.getElementById("titulo");
@@ -20,6 +23,8 @@ let producto1 = document.getElementById("producto1");
 let producto2 = document.getElementById("producto2");
 let plato = document.getElementById("plato");
 let validacion = document.getElementById("validacion");
+let verRecetaP = document.getElementById("verRecetaP");
+let ups = document.getElementById("ups");
 let opcionesPrincipal=[]
 let opcionesAcompañamiento=[]
 
@@ -47,14 +52,15 @@ heladera.addEventListener("click", () => {
   paginaHeladera.style.display = "block";
   paginaComidas.style.display = "none";
   inicio.style.display = "none";
+  ups.style.display = "none";
 });
 
 volver.addEventListener("click", () => {
   paginaHeladera.style.display = "none";
   paginaComidas.style.display = "none";
-  inicio.style.display = "block";
+  inicio.style.display = "flex";
+  muestraAyuda.style.display = "none"
 });
-
 
 const platoRandom = () => {
   resetOpciones();
@@ -65,29 +71,17 @@ const platoRandom = () => {
 
   if (principal[randomP].Nombre != "Pastas") {
     plato.innerHTML = `${principal[randomP].Nombre} con ${acompañamiento[randomA].Nombre}`;
-
-    console.log(
-      [randomP],
-      principal[randomP].Nombre,
-      "con",
-      [randomA],
-      acompañamiento[randomA].Nombre
-    );
+    //verRecetaP.innerHTML = `${principal[randomP].Receta}`
+    // console.log ( [randomP], principal[randomP].Nombre, "con", [randomA], acompañamiento[randomA].Nombre );
   } else {
     randomA = Math.floor(Math.random() * 5);
     //pongo *5 porque son 5 elementos
     plato.innerHTML = `${principal[randomP].Nombre} con ${acompañamiento[randomA].Nombre}`;
-
-    console.log(
-      [randomP],
-      principal[randomP].Nombre,
-      "con",
-      [randomA],
-      acompañamiento[randomA].Nombre
-    );
+    //verRecetaP.innerHTML = `${principal[randomP].Receta}`
+    // console.log ( [randomP], principal[randomP].Nombre, "con", [randomA], acompañamiento[randomA].Nombre );
   }
 
-  opcionesPrincipal = principal[randomP].tipo;
+  opcionesPrincipal = principal[randomP].Ing;
   opcionesAcompañamiento = acompañamiento[randomA].ing;
 
   imprimirPrincipal(opcionesPrincipal)
@@ -100,37 +94,54 @@ let arrayMain = [];
 let arraySide = [];
 let randomMain;
 let randomSide;
+//let recetaMain = [];
+//let recetaSide = [];
 
 function elegirIngredientes() {
   opcionesPrincipal=[];
   opcionesAcompañamiento=[];
   principal.forEach((objeto) => {
-    for (let i = 0; i < objeto.tipo.length; i++) {
-      let element = objeto.tipo[i];
-      if (element == producto1.value || element == producto2.value) {
+    for (let i = 0; i < objeto.Ing.length; i++) {
+      let element = objeto.Ing[i];
+      element = element.toLowerCase()
+      producto1.value = producto1.value.toLowerCase()
+      producto2.value = producto2.value.toLowerCase()
+      if (element.includes(producto1.value)|| element.includes (producto2.value)) {
         mainDish = objeto.Nombre;
         arrayMain.push(mainDish);
-        opcionesPrincipal.push(objeto.tipo)
+        opcionesPrincipal.push(objeto.Ing)
+        recetaMain.push(objeto.Receta)
+      }else{
+        ups.style.display = "block";
       }
     }
   });
+  // principal.forEach((objeto) => {
+  //   let nuevoarray = objeto.Ing.filter(element => element == producto1.value|| element == producto2.value)
+  //   console.log(nuevoarray)
+  // })
+
+  //console.log(arrayMain)
   acompañamiento.forEach((objeto) => {
     for (let i = 0; i < objeto.ing.length; i++) {
       let element = objeto.ing[i];
-      if (element == producto1.value || element == producto2.value) {
+      element = element.toLowerCase()
+      producto1.value = producto1.value.toLowerCase()
+      producto2.value = producto2.value.toLowerCase()
+      if (element.includes(producto1.value)|| element.includes (producto2.value)) {
         sideDish = objeto.Nombre;
         arraySide.push(sideDish);
         opcionesAcompañamiento.push(objeto.ing)
+        //recetaSide.push(objeto.Receta)
       }
     }
   });
-    console.log(arraySide)
-
+    //console.log(arraySide)
   randomMain = Math.floor(Math.random() * arrayMain.length);
   randomSide = Math.floor(Math.random() * arraySide.length);
-
-  console.log(arrayMain[randomMain], "con", arraySide[randomSide]);
+  //console.log(arrayMain[randomMain], "con", arraySide[randomSide]);
   plato.innerHTML = `${arrayMain[randomMain]} con ${arraySide[randomSide]}`;
+  //verRecetaP.innerHTML = `${recetaMain[randomMain]}`
 
   opcionesPrincipal=opcionesPrincipal[randomMain]
   opcionesAcompañamiento=opcionesAcompañamiento[randomSide]
@@ -160,7 +171,9 @@ verComidas.addEventListener("click", (e) => {
   resetOpciones();
   opcionesPrincipal=[];
   opcionesAcompañamiento=[];
-  if (producto1.value == "" && producto2.value == "") {
+  arrayMain = [];
+  arraySide = [];
+  if (producto1.value == "" || producto2.value == "") {
     validacion.style.display = "block";
   } else {
     elegirIngredientes();
@@ -178,9 +191,10 @@ otroPlato.addEventListener("click", (e) => {
   resetOpciones();
   arrayMain = [];
   arraySide = [];
+  //recetaMain = []
+  //recetaSide =[];
   opcionesPrincipal=[];
   opcionesAcompañamiento=[];
-  
   elegirIngredientes();
 });
 
@@ -196,3 +210,9 @@ function resetOpciones() {
     }
   }
 }
+ayuda.addEventListener("click", () =>{
+    muestraAyuda.style.display = "block"
+})
+cerrarAyuda.addEventListener("click", () =>{
+  muestraAyuda.style.display = "none"
+})
