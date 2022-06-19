@@ -20,7 +20,7 @@
     position: relative;
 }
 body{
-    background-image: url(/images/patron_comida.JPeG);
+    background-image: url(/images/patron_comida.jpeg);
     background-size: 500px;
     background-position: fixed;
     margin: 0;
@@ -120,10 +120,12 @@ label{
 .botones{
     display: flex;
     flex-direction: row;
-    width: 70%;
+    width: 65%;
     justify-content: space-around;
     align-items: flex-end;
-    margin: 0 auto;
+    align-content: flex-end;
+    margin: 20px auto;
+    margin-top:10px;
 }
 h1{
     color: var(--color-cafe);
@@ -141,7 +143,7 @@ h1{
     flex-direction: column;
     font-size: 13px;
     justify-content: space-around;
-    height: 42vh;
+    /* max-height: 50vh; */
     box-sizing: border-box;
     padding-left: 15px;
 }
@@ -172,12 +174,14 @@ h1{
 }
 #paginaComidas{
     display: none;
-    height: 90vh;
+    height: 88vh;
     background: url(/images/fondo_recetas_ok3.png);
     background-size: 365px;
     background-position:center;
     background-position-y: -15px;
-    justify-content: space-around
+    justify-content: space-between;
+    align-items: flex-end;
+    align-content: space-between;
 }
 #paginaRecetas{
     display: flex;

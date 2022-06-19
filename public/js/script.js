@@ -35,7 +35,7 @@ random.addEventListener("click", () => {
   platoRandom();
   otroRandom.style.display = "block";
   otroPlato.style.display = "none";
-  paginaComidas.style.display = "block";
+  paginaComidas.style.display = "flex";
   paginaHeladera.style.display = "none";
   inicio.style.display = "none";
 });
@@ -43,7 +43,7 @@ random.addEventListener("click", () => {
 otroRandom.addEventListener("click", () => {
   resetOpciones();
   platoRandom();
-  paginaComidas.style.display = "block";
+  paginaComidas.style.display = "flex";
   paginaHeladera.style.display = "none";
   inicio.style.display = "none";
 });
@@ -110,7 +110,7 @@ function elegirIngredientes() {
         mainDish = objeto.Nombre;
         arrayMain.push(mainDish);
         opcionesPrincipal.push(objeto.Ing)
-        recetaMain.push(objeto.Receta)
+        //recetaMain.push(objeto.Receta)
       }else{
         ups.style.display = "block";
       }
@@ -180,7 +180,7 @@ verComidas.addEventListener("click", (e) => {
     validacion.style.display = "none";
     otroPlato.style.display = "block";
     otroRandom.style.display = "none";
-    paginaComidas.style.display = "block";
+    paginaComidas.style.display = "flex";
     paginaHeladera.style.display = "none";
     inicio.style.display = "none";
   }
