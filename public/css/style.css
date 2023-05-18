@@ -20,7 +20,7 @@
     position: relative;
 }
 body{
-    background-image: url(/images/patron_comida.jpeg);
+    background-image: url(/public/images/patron_comida.jpeg);
     background-size: 500px;
     background-position: fixed;
     margin: 0;
@@ -175,7 +175,7 @@ h1{
 #paginaComidas{
     display: none;
     height: 88vh;
-    background: url(/images/fondo_recetas_ok3.png);
+    background: url(/public/images/fondo_recetas_ok3.png);
     background-size: 365px;
     background-position:center;
     background-position-y: -15px;
